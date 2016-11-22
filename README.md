@@ -1,40 +1,22 @@
-# java-getting-started
+CAMBIEN!!!
 
-A barebones Java app, which can easily be deployed to Heroku.
+package util;
 
-This application supports the [Getting Started with Java on Heroku](https://devcenter.heroku.com/articles/getting-started-with-java) article - check it out.
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-## Running Locally
 
-Make sure you have Java and Maven installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
+public class Connection {
 
-```sh
-$ git clone https://github.com/heroku/java-getting-started.git
-$ cd java-getting-started
-$ mvn install
-$ heroku local:start
-```
+    private java.sql.Connection connection  = null;
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+    static final String USER = "root"; <--
+    static final String PASS = "megamisama"; <---
+    static final String DB_URL = "jdbc:mysql://localhost/proyecto4"; <---
 
-If you're going to use a database, ensure you have a local `.env` file that reads something like this:
 
-```
-DATABASE_URL=postgres://localhost:5432/java_database_name
-```
+    public Connection() {
 
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-
-## Documentation
-
-For more information about using Java on Heroku, see these Dev Center articles:
-
-- [Java on Heroku](https://devcenter.heroku.com/categories/java)
